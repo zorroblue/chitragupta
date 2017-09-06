@@ -1,6 +1,6 @@
 """ Chitragupta - The guy who tracks your contributions to the MetaKGP Github organisation!
 
-Author : Rameshwar Bhaskaran<rameshwarbhaskaran.iitkgp@gmail.com>
+Author : Rameshwar Bhaskaran
 """
 
 import requests
