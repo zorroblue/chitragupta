@@ -4,9 +4,16 @@
 
 ### To run:
 
+Follow instructions as given [here](https://github.com/metakgp/kakashi)
+
+Create a bot account.
+
 `python chitragupta.py`
 
 ### TODO
  
- * Link Github handles
  * Pagination support
+
+### Maintainers
+
+* [Rameshwar Bhaskaran](https://github.com/zorroblue)

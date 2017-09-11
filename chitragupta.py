@@ -7,6 +7,8 @@ import requests
 import json
 import pywikibot
 
+ignored_repos = set({'git-exercise'})
+
 def get_all_repos():
     # get a list of all repositories in the MetaKGP org
     r = requests.get("https://api.github.com/orgs/metakgp/repos")
@@ -19,11 +21,13 @@ def get_all_repos():
         repos = json.loads(r.text)
         contributor_urls = {}
         for repo in repos:
-           contributor_urls[repo['name']] = repo['contributors_url']
+            if repo['name'] not in ignored_repos:
+                contributor_urls[repo['name']] = repo['contributors_url']
         contributors = {}
         for repo, url in contributor_urls.items():
             try:
                 print "Getting ", repo
+                # ignore the sandbox
                 contributor_response = requests.get(url)
                 contributors[repo] = set()
                 repo_contributors = json.loads(contributor_response.text)
@@ -46,7 +50,8 @@ def main():
     text = "<b>List of contributors on Github:</b><br/><br/>"
     i = 1
     for name in consolidated_list:
-        text += str(i)+". "+name+" <br/>"
+        url = "https://github.com/"+name
+        text += str(i)+". ["+url+" "+name+"] <br/>"
         i += 1
     page.text = text
     page.save(u'Update list of contributors')
