@@ -8,4 +8,5 @@
 
 ### TODO
  
- * Use pywikibot
+ * Link Github handles
+ * Pagination support
