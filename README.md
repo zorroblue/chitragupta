@@ -1,6 +1,8 @@
 # Chitragupta
 
-## He tracks your contributions to the MetaKGP Github Org!
+## He tracks your [contributions](https://wiki.metakgp.org/w/MetaKGP_Github_Contributors) to the MetaKGP Github Org!
+
+*Note: Please check the [MetaKGP fork](https://github.com/metakgp/chitragupta) for sending PRs. Further development will happen there*
 
 ### To run:
 
